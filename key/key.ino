@@ -132,13 +132,13 @@ void loop () {
 
         if (strncmp("GET /", data, 5) == 0) {
             data += 5;
-            if (strncmp("8ec49811 ", data, 9) == 0) {
-                Serial.println( "YEY!" );
+            if (strncmp("unlock ", data, 7) == 0) {
+                Serial.println( "Unlocking..." );
                 unlock();
                 ether.httpServerReply(api());
                 blink();
             } else if (strncmp("areyoukeybert ", data, 14) == 0) {
-                Serial.println( "IAmKeybert" );
+                Serial.println( "Recieved a ping." );
                 ether.httpServerReply(ping());
             } else {
                 ether.httpServerReply(api());
