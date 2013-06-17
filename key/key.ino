@@ -68,7 +68,7 @@ static word ping() {
     bfill = ether.tcpOffset();
     bfill.emit_p(PSTR(
         "$F"
-        "IAmKeybert"),
+        "iamkeybert"),
         json_OK);
     return bfill.position();
 }
